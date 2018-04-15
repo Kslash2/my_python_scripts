@@ -31,20 +31,30 @@ def find_mp3_music(path):
     return name_list
 
 
+def get_artist_name_song_name(music):
+    if music.find('-'):
+        music_parsed = music.split("-")
+        if len(music_parsed) > 1:
+            key = music_parsed[0].strip()
+            value = music_parsed[1].strip().replace(".mp3", "").replace(".wma", "").replace(".flac", "")
+            return {key: value}
+        else:
+            music.strip().replace(".mp3", "").replace(".wma", "").replace(".flac", "")
+            return {music: music}
+    else:
+        music.strip().replace(".mp3", "").replace(".wma", "").replace(".flac", "")
+        return {music: music}
+
+
 def create_dict(music_list):
     music_dictionary = {}
     for music in music_list:
-        if music.find('-'):
-            music_parsed = music.split("-")
-            if len(music_parsed) > 1:
-                key = music_parsed[0].strip()
-                value = music_parsed[1].strip().replace(".mp3","").replace(".wma","").replace(".flac","")
-                music_dictionary.update({key: value})
+        music_dictionary.update(get_artist_name_song_name(music))
 
     return music_dictionary
 
 
-def save_JSON(path, music_dictionary):
+def save_json(path, music_dictionary):
     name = os.path.basename(os.path.normpath(path)) + ".json"
     print("Name is :" + name)
     with open(path + "\\" + name, 'w') as f:
@@ -54,7 +64,7 @@ def save_JSON(path, music_dictionary):
 def main():
     my_path = get_path()
     if my_path == -1:
-        print("Sorry, insert a path!: py music.py \"your path\" ")
+        print("Sorry, insert a path!")
     else:
         if my_path == 0:
             print("Sorry, this path doesnt'exists!")
