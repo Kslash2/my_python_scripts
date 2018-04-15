@@ -39,11 +39,11 @@ def get_artist_name_song_name(music):
             value = music_parsed[1].strip().replace(".mp3", "").replace(".wma", "").replace(".flac", "")
             return {key: value}
         else:
-            music.strip().replace(".mp3", "").replace(".wma", "").replace(".flac", "")
-            return {music: music}
+            musicp = music.strip().replace(".mp3", "").replace(".wma", "").replace(".flac", "")
+            return {musicp: musicp}
     else:
-        music.strip().replace(".mp3", "").replace(".wma", "").replace(".flac", "")
-        return {music: music}
+        musicp = music.strip().replace(".mp3", "").replace(".wma", "").replace(".flac", "")
+        return {musicp: musicp}
 
 
 def create_dict(music_list):
@@ -72,7 +72,7 @@ def main():
             music = find_mp3_music(my_path)
             music_dictionary = create_dict(music)
             print(music_dictionary)
-            save_JSON(my_path, music_dictionary)
+            save_json(my_path, music_dictionary)
 
 
 main()
