@@ -9,10 +9,10 @@ class Rule:
         self.install_num = install_num
 
 
-def get_all_rules(url_list):
+def get_all_rules(url_list, last_page_before_you_got_kicked_out):
     list_of_parsed_rules = []
     for i, url in enumerate(url_list):
-        if i > 235 :
+        if i > last_page_before_you_got_kicked_out :
             list_raw_rules = get_raw_rules(url)
             list_of_parsed_rules += parse_rules(list_raw_rules)
             print(i)
