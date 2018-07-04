@@ -15,3 +15,10 @@ Service_Parser: Will help you get all the SERVICES in a dictionary { Name_Of_Ser
 Rules_Parser: Will help you getting all the RULES from all the SERVICES pages, you can choose the interval of time to wait between a request or another, default set to 60-120. 
 Main: get the SERVICES and the RULES then it will save Services and Rules in JSON files. A JSON file for each RULES page.
 Example: My_Toy_Service page will have rules about My_Toy_Service, so you will get a JSON file with all the rules in that page.
+
+### MergeFiles.py
+It takes the files in a directory and merge their content into a unique file, I needed this for some JSON...
+
+### Wiki.py
+Here in Italy wikipedia is blocked, so I created an easy script, that will download your page, given the argument.
+P.S. It's just a script which I made for fun in 5 minutes. It will not work if you don't know the exact URL. BTW the problem about this law in Europe IS REAL!!!!
