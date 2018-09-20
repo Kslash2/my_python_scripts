@@ -18,7 +18,3 @@ Example: My_Toy_Service page will have rules about My_Toy_Service, so you will g
 
 ### MergeFiles.py
 It takes the files in a directory and merge their content into a unique file, I needed this for some JSON...
-
-### Wiki.py
-Here in Italy wikipedia is blocked, so I created an easy script, that will download your page, given the argument.
-P.S. It's just a script which I made for fun in 5 minutes. It will not work if you don't know the exact URL. BTW the problem about this law in Europe IS REAL!!!!
