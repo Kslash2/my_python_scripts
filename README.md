@@ -23,4 +23,4 @@ It takes the files in a directory and merge their content into a unique file, I 
 
 ### thesis_project_scripts
 These scripts were created and used by me, for my thesis work. I had a dataset with a lot of rules and smartobject and I extracted them for my needs. 
-There is also a script which creates SQL query for populating a DB that I used.
+There are also two script which creates SQL queries for populating a DB that I used.
