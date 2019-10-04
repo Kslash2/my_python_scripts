@@ -24,3 +24,7 @@ It takes the files in a directory and merge their content into a unique file, I 
 ### thesis_project_scripts
 These scripts were created and used by me, for my thesis work. I had a dataset with a lot of rules and smartobject and I extracted them for my needs. 
 There are also two script which creates SQL queries for populating a DB that I used.
+
+
+### post_gen
+This script creates MARKDOWN files for my Jekyll based website http://kslash2.github.io/
