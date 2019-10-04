@@ -28,3 +28,32 @@ There are also two script which creates SQL queries for populating a DB that I u
 
 ### post_gen
 This script creates MARKDOWN files for my Jekyll based website http://kslash2.github.io/
+
+
+### tnt_find
+Python script that help you finding torrents
+
+
+I made this script for fun.
+TNT Village is/was a community for file sharing using torrent.
+Now is closed, but if you go on the website (http://tntvillage.scambioetico.org/) you can download a dump.
+When you download the dump move it in the same directory of the script.
+To execute the script you must have python installed with Pandas and pathlib. Just install them using pip.
+Then execute the script in the terminal:
+
+>python tnt_find.py <TITLE> <DESCRIPTION>
+
+Description is optional.
+
+Example:
+>python tnt_find.py wargames
+
+>python tnt_find.py wargames 720p
+
+>python tnt_find.py "wargames - giochi di guerra" "720p blabla"
+
+The result will be a Dataframe with the URLs, saved in a csv file called result.csv
+
+I assume no responsability for the illegal use of torrent, this is just a script I made for fun.
+
+
