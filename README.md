@@ -57,3 +57,9 @@ The result will be a Dataframe with the URLs, saved in a csv file called result.
 I assume no responsability for the illegal use of torrent, this is just a script I made for fun.
 
 
+### csv_union
+This script take all the .csv files within the script directory and merge them in a unique file.
+
+
+### csv_to_xlsx
+This script convert all the .csv files within the script directory and convert all of them in .xlsx files.
