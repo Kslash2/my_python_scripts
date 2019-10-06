@@ -46,7 +46,7 @@ categories =  [
 
 URL_release = "http://forum.tntvillage.scambioetico.org/index.php?showtopic="
 URL_wayback_machine = "https://web.archive.org/web/http://forum.tntvillage.scambioetico.org/index.php?showtopic="
-
+MAGNET = "magnet:?xt=urn:btih:"
 
 def find_torrent(type_of_search,**kwargs):
     """ Find the torrent using his title (TITOLO), or its title and description (DESCRIZIONE)
@@ -72,10 +72,12 @@ def find_torrent(type_of_search,**kwargs):
         dump_table = dump_table[dump_table["DESCRIZIONE"].str.contains(searched_description, case=False)]
     dump_table["URL_RELEASE_TEMP"] = URL_release
     dump_table["URL_WAYBACK_RELEASE_TEMP"] = URL_wayback_machine
+    dump_table["MAGNET_TEMP"] = MAGNET
     dump_table["URL_RELEASE"] =  dump_table["URL_RELEASE_TEMP"] + dump_table["TOPIC"]
     dump_table["URL_WAYBACK_RELEASE"] = dump_table["URL_WAYBACK_RELEASE_TEMP"] + dump_table["TOPIC"]
-    dump_table.drop(columns=["URL_RELEASE_TEMP", "URL_WAYBACK_RELEASE_TEMP"])
-    dump_table = dump_table[["TITOLO", "DESCRIZIONE", "DIMENSIONE", "URL_RELEASE", "URL_WAYBACK_RELEASE"]]
+    dump_table["MAGNET"] = dump_table["MAGNET_TEMP"] + dump_table["HASH"]
+    dump_table.drop(columns=["URL_RELEASE_TEMP", "URL_WAYBACK_RELEASE_TEMP", "MAGNET_TEMP"])
+    dump_table = dump_table[["TITOLO", "DESCRIZIONE", "DIMENSIONE", "MAGNET", "URL_RELEASE", "URL_WAYBACK_RELEASE", ]]
     
     return dump_table
 
